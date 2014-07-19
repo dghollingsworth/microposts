@@ -7,6 +7,8 @@ gem 'pg', '0.15.1'
 gem 'bootstrap-sass','2.3.2.0'
 gem 'sprockets', '2.11.0'
 
+gem 'bcrypt-ruby','3.1.2'
+
 # Use sqlite3 as the database for Active Record
 group :development, :test do
   gem 'rspec-rails', '2.13.1'
@@ -52,6 +54,7 @@ gem 'i18n','0.6.9'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+
 
 # Use unicorn as the app server
 # gem 'unicorn'
