@@ -6,10 +6,14 @@ Microposts::Application.routes.draw do
   match '/contact', to: 'static_pages#contact', via: 'get'
   
   get "/signup", to: 'users#new'
-  
-  # get '/help', to: 'static_pages#help', as: "help"
-  # get '/about', to: 'static_pages#about', as: 'about'
-  # get '/contact', to: 'static_pages#contact', as: 'contact'
 
+  #resources :users
+  
+  get '/users', to: 'users#index'
+  get '/users/:id', to: 'users#show', as: 'user'
+  post '/users', to: 'users#create'
+  get '/users/:id/edit', to: 'users#edit', as: 'edit_user'
+  patch '/users/:id', to: 'users#update'
+  delete '/users/:id', to: 'users#destroy'
 
 end
