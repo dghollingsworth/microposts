@@ -48,6 +48,10 @@ Microposts::Application.configure do
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 
+  #Force all access to the app over SSL, user Strict-Transport-Security,
+  #and user secure cookies.
+  config.force_ssl = true
+
   # Use a different logger for distributed setups.
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
