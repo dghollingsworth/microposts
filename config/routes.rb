@@ -3,12 +3,18 @@ Microposts::Application.routes.draw do
   get "microposts/destroy"
   root "static_pages#home"
 
-  resources :users
-  match "/signup", to: 'users#new', via: 'get'
+  resources :users do 
+    member do 
+      get :following, :followers
+    end
+  end
 
   resources :microposts, only: [:create, :destroy]
 
+  resources :relationships, only: [:create, :destroy]
+
   resources :sessions, only: [:new, :create, :destroy]
+  match "/signup", to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
 
